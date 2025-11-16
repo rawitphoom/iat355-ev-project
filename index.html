@@ -1,66 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>EV Adoption and Charging Infrastructure in Canada</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Vega, Vega-Lite, and Vega-Embed from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
   <header class="site-header">
     <h1>EV Adoption and Charging Infrastructure in Canada</h1>
     <p>
-      This site explores how public charging stations relate to the growth of electric vehicles,
-      with a focus on British Columbia between 2015 and 2024.
+      This site shows how public charging infrastructure relates to the growth of
+      electric vehicles, with a focus on British Columbia between 2017 and 2024.
     </p>
   </header>
 
   <main>
-    <!-- MAIN BC LINE CHART -->
+    <!-- MAIN TABLEAU CHART -->
     <section class="vis-section">
       <h2>BC EV Registrations vs Public Charging Stations</h2>
       <p class="vis-caption">
-        Dual-axis line chart showing EV registrations and public charging station counts in
-        British Columbia from 2017 to 2024.
+        Dual-axis line chart from Tableau showing EV registrations and public
+        charging station counts in British Columbia from 2017 to 2024.
       </p>
-      <img src="images/bc_line_chart.png"
-           alt="Line chart showing BC EV registrations and public charging stations over time">
+      <img
+        src="images/bc_line_chart.png"
+        alt="BC EV registrations and public charging stations dual-axis chart"
+      />
     </section>
 
-    <!-- GRID WITH TWO SUPPORTING VISUALS -->
+    <!-- VEGA-LITE LINE PROTOTYPE -->
+    <section class="vis-section">
+      <h2>BC EV vs Charging – Vega-Lite Prototype</h2>
+      <p class="vis-caption">
+        Working prototype of the BC EV vs charging trend using Vega-Lite. This
+        chart is interactive and can be refined for the final project.
+      </p>
+      <div id="bc-line-chart"></div>
+    </section>
+
+    <!-- GRID WITH BAR CHART + MAP -->
     <section class="vis-grid">
       <div class="vis-card">
         <h2>Battery vs Hybrid Electric Vehicles</h2>
         <p class="vis-caption">
-          Bar chart comparing battery electric and hybrid electric vehicles over the years.
+          Vega-Lite bar chart comparing battery electric and hybrid electric
+          vehicles across years.
         </p>
-        <img src="images/battery_vs_hybrid.png"
-             alt="Bar chart of battery vs hybrid electric vehicles">
+        <div id="battery-hybrid-chart"></div>
       </div>
 
       <div class="vis-card">
-        <h2>Fast Charging Coverage by Province</h2>
+        <h2>Fast-Charging Coverage by Province</h2>
         <p class="vis-caption">
-          Map showing the percentage of major highways with fast charging coverage in each province.
+          Map showing the percentage of major highways with good fast-charging
+          coverage in each province.
         </p>
-        <img src="images/fast_charging_map.png"
-             alt="Map of Canada with fast charging coverage percentages by province">
+        <img
+          src="images/fast_charging_map.png"
+          alt="Map of Canada with fast charging coverage percentages by province"
+        />
       </div>
     </section>
 
-    <!-- OPTIONAL: extra chart if you want to show it -->
+    <!-- ALTERNATIVE VIEW IMAGE -->
     <section class="vis-section">
       <h2>EV Registrations vs Public Charging Stations (Alternative View)</h2>
       <p class="vis-caption">
-        Another version of the BC EV vs public charging chart. This can be used later for comparison
-        or replaced with an interactive visualization.
+        Another version of the BC EV vs public charging chart. This can be used
+        later for comparison or replaced with another interactive view.
       </p>
-      <img src="images/bc_registrations_vs_public_chart.png"
-           alt="Alternative EV registrations vs public charging stations chart">
+      <img
+        src="images/bc_registrations_vs_public_chart.png"
+        alt="Alternative EV registrations vs public charging stations chart"
+      />
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>Data sources: Statistics Canada (Table 20-10-0020-01) and Natural Resources Canada, 2025.</p>
+    <p>
+      Data sources: Statistics Canada (Table 20-10-0020-01) and Natural Resources
+      Canada, 2025.
+    </p>
   </footer>
+
+  <!-- Vega-Lite charts -->
+  <script src="vega_charts.js"></script>
 </body>
 </html>
